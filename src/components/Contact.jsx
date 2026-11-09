@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Mail, MapPin, Github, Linkedin, Loader2 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Reveal from "./Reveal.jsx";
-import { profile, links } from "../data.js";
+import { profile, links, gmailUrl, openGmail } from "../data.js";
 
 // Formspree form ID comes from .env (VITE_FORMSPREE_ID). See README for setup.
 const FORM_ID = import.meta.env.VITE_FORMSPREE_ID;
@@ -135,11 +135,11 @@ export default function Contact() {
             </a>
             <a
               className="btn primary"
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}&su=${encodeURIComponent("Portfolio enquiry")}`}
+              href={gmailUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openGmail}
             >
-              {" "}
               <Mail size={16} /> Email Me
             </a>
           </div>

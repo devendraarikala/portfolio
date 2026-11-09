@@ -251,3 +251,31 @@ export const languages = [
   { name: "Telugu", level: "Native / Bilingual" },
   { name: "English", level: "Professional Working Proficiency" },
 ];
+// Gmail compose link: Gmail app on phones, Gmail website on computers.
+const enc = encodeURIComponent;
+const MAIL_SUBJECT = "Portfolio enquiry";
+const MAIL_BODY = "Hi Devendra,\n\n";
+
+export const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(profile.email)}&su=${enc(MAIL_SUBJECT)}&body=${enc(MAIL_BODY)}`;
+
+export function openGmail(e) {
+  const ua = navigator.userAgent;
+  const isAndroid = /Android/i.test(ua);
+  const isIOS =
+    /iPhone|iPad|iPod/i.test(ua) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (isAndroid) {
+    e.preventDefault();
+    window.location.href =
+      `intent:mailto:${profile.email}?subject=${enc(MAIL_SUBJECT)}&body=${enc(MAIL_BODY)}` +
+      `#Intent;scheme=mailto;package=com.google.android.gm;S.browser_fallback_url=${enc(gmailUrl)};end`;
+  } else if (isIOS) {
+    e.preventDefault();
+    window.location.href = `googlegmail:///co?to=${enc(profile.email)}&subject=${enc(MAIL_SUBJECT)}&body=${enc(MAIL_BODY)}`;
+    setTimeout(() => {
+      if (!document.hidden) window.location.href = gmailUrl;
+    }, 1200);
+  }
+  // Computers: the normal link opens Gmail compose in a new tab.
+}
