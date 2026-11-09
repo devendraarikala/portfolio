@@ -784,3 +784,17 @@ a.loc:hover {
   height: 220px;
   border: 0;
 }
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  height: 100%;
+}
+.cert-icon {
+  color: var(--icon);
+  margin-bottom: 0.4rem;
+}
+.cert-card .btn-row {
+  margin-top: auto;
+  padding-top: 0.6rem;
+}

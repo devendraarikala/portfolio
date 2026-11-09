@@ -204,6 +204,14 @@ export const education = [
 ];
 export const certifications = [
   {
+    title: "Google Generative AI Foundations & Anti Gravity Workshop",
+    org: "The SmartBridge",
+    date: "Jul 2026",
+    certUrl: `${import.meta.env.BASE_URL}certificates/google-antigravity.jpg`,
+    badgeUrl:
+      "https://www.credly.com/badges/09040592-5977-4d63-9ada-964c4b227835/public_url",
+  },
+  {
     title: "Python for Data Science",
     org: "IBM",
     date: "Mar 2026",
@@ -215,14 +223,6 @@ export const certifications = [
     org: "CodeChef",
     date: "May 2026",
     certUrl: "https://www.codechef.com/certificates/public/3dba41f",
-  },
-  {
-    title: "Google Generative AI Foundations & Anti Gravity Workshop",
-    org: "SmartBridge",
-    date: "Jul 2026",
-    certUrl: `${import.meta.env.BASE_URL}certificates/google-antigravity.jpg`,
-    badgeUrl:
-      "https://www.credly.com/badges/09040592-5977-4d63-9ada-964c4b227835/public_url",
   },
   {
     title: "Marketing Intern",
